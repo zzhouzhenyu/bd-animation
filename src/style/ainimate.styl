@@ -1,0 +1,395 @@
+@import "mixin.styl"
+
+
+//loading页动画
+@keyframes riderMove
+  from
+    transform translate3d(0, 0, 0)
+  to
+    transform translate3d(-170%, 0, 0)
+
+@keyframes progress
+  to
+    width 100%
+
+//loading页动画加载
+.loading
+  .rider
+    animation riderMove 1s 1s linear forwards
+  .progress
+    .progress-line
+      animation progress 1s 1s linear forwards
+
+
+//page1动画
+@keyframes grass1Stretch
+  20%
+    height r(100)
+  100%
+    height r(396)
+
+@keyframes fadeIn
+  to
+    opacity 1
+
+@keyframes rotate
+  to
+    transform rotateZ(360deg)
+
+@keyframes treeBounceIn
+  0%
+    transform translate3d(0, -200%, 0)
+  40%
+    transform translate3d(0, 50%, 0)
+  80%
+    transform translate3d(0, -20%, 0)
+  100%
+    transform translate3d(0, 0, 0)
+    opacity 1
+
+@keyframes upDown
+  70%
+    transform translate3d(0, -5%, 0)
+  100%
+    transform translate3d(0, 0, 0)
+
+@keyframes dustFadeInOut
+  0%
+    opacity 0
+    transform scale(0)
+  70%
+    transform scale(1.5)
+    opacity 1
+  100%
+    transform scale(1.5)
+    opacity 0
+
+@keyframes grass2BounceIn
+  0%
+    transform scale(1.5)
+  100%
+    opacity 1
+    transform scale(1)
+
+@keyframes titleSlideIn
+  0%
+    top 0
+    transform translate3d(0, -100%, 0)
+  100%
+    transform translate3d(0, 0, 0)
+    opacity 1
+
+@keyframes helloScale
+  0%
+    transform scale(0)
+  70%
+    transform scale(1.5)
+    opacity 1
+  100%
+    transform scale(1)
+    opacity 1
+
+
+//page1动画加载
+.page1.animate
+  .grass1
+    animation grass1Stretch .6s forwards
+  .grass2
+    animation grass2BounceIn .6s .4s forwards
+  .circle1
+    animation fadeIn .2s 1s forwards
+    .circle2
+      animation rotate 1s 1.2s linear infinite
+  .tree
+    animation treeBounceIn .4s 1.2s forwards
+  .rider2
+    animation fadeIn .6s 1.4s forwards,
+    upDown .4s 2s infinite
+  .dust
+    animation dustFadeInOut .4s 2s infinite
+  .theme-title
+    animation titleSlideIn .4s 1.6s forwards
+    .hello
+      animation helloScale .4s 2s forwards
+
+
+//page2 - page8全局文字动画
+@keyframes lineStretch
+  from
+    opacity 1
+    height 0
+  to
+    opacity: 1;
+
+@keyframes slideRight2Left
+  0%
+    transform translate3d(r(640),0,0)
+  75%
+    opacity 1
+  100%
+    opacity 1
+
+//page2 - page8全局文字动画加载
+.swiper-slide.animate
+  .text
+    .line
+      animation lineStretch .6s forwards
+    .title
+      .title1
+        animation slideRight2Left .6s forwards
+      .title2
+        animation  slideRight2Left .6s .05s forwards
+
+
+//page2动画
+@keyframes rotateIn
+  0%
+    opacity 1
+    transform rotateZ(60deg)
+  50%
+    transform rotateZ(-5deg)
+  100%
+    transform rotateZ(0)
+    opacity 1
+
+@keyframes rotateOut
+  25%
+    transform rotateZ(5deg)
+  100%
+    transform rotateZ(-60deg)
+
+@keyframes rotateFadeIn
+  0%
+    transform rotateZ(90deg)
+  75%
+    transform rotateZ(-5deg)
+    opacity 1
+  100%
+    transform rotateZ(0)
+    opacity 1
+
+@keyframes rotateFadeOut
+  0%
+    opacity 1
+  25%
+    transform rotateZ(5deg)
+    opacity 1
+  100%
+    transform rotateZ(-90deg)
+    opacity 0
+
+@keyframes paperTremble
+  50%
+    transform translate3d(10%, 0, 0)
+
+@keyframes legUp
+  100%
+    transform rotateZ(-10deg)
+    transform-origin left bottom
+
+@keyframes wordTremble
+  20%
+    transform translate3d(-5%,0, 0)
+  40%
+    transform translate3d(5%,-5%, 0)
+  60%
+    transform translate3d(-5%,5%, 0)
+  80%
+    transform translate3d(0,5%, 0)
+
+
+//page2动画加载
+.page2.animate
+  .bg1,
+  .bg2,
+  .bg3
+    transform-origin 50% 200%
+  .person1,
+  .person2,
+  .person3
+    transform-origin 50% 300%
+  .wrap1,
+  .wrap2,
+  .wrap3
+    transform-origin right bottom
+
+  //三组动画轮播
+  for i in 1..3
+    round = (i - 1) * 4.6
+    roundTime = unit(round, 's')
+    if i != 3
+      .bg{i}
+        animation rotateIn .8s roundTime forwards, rotateOut .8s 2.4s+roundTime forwards
+      .person{i}
+        animation rotateIn .8s .6s+roundTime forwards, rotateOut .8s 3s+roundTime forwards
+      .wrap{i}
+        animation rotateFadeIn .8s 1.2s+roundTime forwards,rotateFadeOut .8s 3.6s+roundTime forwards
+    else
+      .bg{i}
+        animation rotateIn .8s roundTime forwards
+      .person{i}
+        animation rotateIn .8s .6s+roundTime forwards
+      .wrap{i}
+        animation rotateFadeIn .8s 1.2s+roundTime forwards
+
+  .person1
+    .paper2
+      animation paperTremble .5s infinite
+    .paper3
+      animation paperTremble .5s .2s infinite
+  .person2
+    .leg2
+      animation legUp 1s 6s forwards
+  .person3
+    time = 0.4s 0.3s 0.4s 0.5s
+    for v,i in time
+      i = i + 1
+      .word{i}
+        animation wordTremble v 10.6s infinite
+
+//page3动画
+@keyframes tableUp2Down
+  from
+    transform translate3d(0, -100%, 0)
+  to
+    opacity 1
+
+@keyframes handLeftTremble
+  to
+    transform rotateZ(8deg) translate3d(0, 10%, 0)
+
+@keyframes handRightTremble
+  to
+    transform rotateZ(-8deg) translate3d(0, 10%, 0)
+
+//page3动画加载
+.page3.animate
+  .bg
+    transform-origin 50% 200%
+    animation rotateIn .8s forwards
+  .table
+    animation tableUp2Down .6s 1.2s forwards
+  .food
+    animation tableUp2Down .4s 1.6s forwards
+  .bear
+    animation fadeIn .4s 2.2s forwards
+    .face1,
+    .face2
+      animation helloScale .4s 2.6s forwards
+    .hand-left
+      transform-origin left top
+      animation handLeftTremble .15s 1.9s infinite alternate
+    .hand-right
+      transform-origin right top
+      animation handRightTremble .15s 2s infinite alternate
+
+
+//page4动画
+@keyframes bearUp2Down
+  0%
+    opacity 0
+    transform translate3d(0, -80%, 0)
+  20%
+    opacity 1
+    transform translate3d(0, -80%, 0)
+  100%
+    opacity 1
+
+@keyframes fadeOutDown
+  to
+    transform translate3d(0, 100%, 0)
+    opacity 0
+
+//page4动画加载
+.page4.animate
+  .bg
+    transform-origin 50% 200%
+    animation rotateIn .8s forwards
+  .bear1
+    animation bearUp2Down .6s .8s forwards
+  .card1
+    animation helloScale .4s 1.4s forwards, wordTremble .45s 1.9s infinite
+  .oil1
+    animation helloScale .4s 1.4s forwards, wordTremble .4s 1.9s infinite
+  .evil1
+    animation helloScale .4s 1.4s forwards, wordTremble .35s 1.9s infinite
+  //添加类名启用动画
+  .cardsDisappear
+    animation fadeOutDown .6s forwards
+
+//page5动画加载
+.page5.animate
+  .bg
+    transform-origin 50% 200%
+    animation rotateIn .8s forwards
+  .bear
+    animation tableUp2Down .8s .8s forwards
+  .card1,
+  .card2,
+  .card3
+    animation helloScale .5s 1.6s forwards
+
+//page6动画
+@keyframes snowDown
+  70%
+    opacity 1
+  100%
+    opacity 0
+    transform translate3d(0, r(400), 0)
+
+//page6动画加载
+.page6.animate
+  .bg
+    transform-origin 50% 200%
+    animation rotateIn .8s forwards
+  .cloud
+    animation helloScale .8s .8s forwards, paperTremble .8s 1.6s infinite
+  .bear
+    animation fadeIn .6s 1.6s forwards,
+    upDown .4s 2.2s infinite
+  .dust
+    animation dustFadeInOut .4s 2s infinite
+
+  for i in 1..6
+    .piece{i}
+      res = 60 * (i - 1)
+      delayTime = 2.2 + 0.1 * i s
+      left r(160) + r(res)
+      animation snowDown .8s delayTime infinite
+
+
+//page7动画
+@keyframes rotateInAll
+  0%
+    transform rotateZ(0) translate3d(0, 0, 0)
+  20%
+    transform rotateZ(0) translate3d(0, 0, 0)
+  100%
+
+@keyframes fadeOut
+
+  100%
+    opacity 0
+
+@keyframes boxRotate
+  80%
+    transform rotateZ(30deg)
+  100%
+    transform rotateZ(0)
+
+//page7动画加载
+.page7.animate
+    .bg
+      transform-origin 50% 200%
+      animation rotateIn .8s forwards
+    .bear
+      animation tableUp2Down .8s .8s forwards
+
+    for i in 1..12
+      delayTime = 0.2 * (i - 1) s
+      delayTime2 = 0.15 * (i - 1) s
+      .box{i}
+        animation rotateInAll 3s 1.6s forwards, fadeOut .4s 3.4s+delayTime forwards
+        .gift{i}
+          animation boxRotate .1s 3s+delayTime2 forwards, fadeIn 3s 1.6s forwards
+

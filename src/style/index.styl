@@ -1,0 +1,463 @@
+@import "mixin.styl"
+@import "ainimate.styl"
+
+.swiper-container
+  full-screen()
+  background-color #eee
+
+.loading
+  full-screen()
+  position-absolute-tl(0, 0)
+  background-color #ffece9
+  z-index 100
+  .rider
+    box-background-img('../images/loading/rider1_.png', 154, 121)
+    position-absolute-tr(233, 108)
+  .progress
+    size(416, 20)
+    border 2px solid #373838
+    position-absolute-center()
+    top r(360)
+    border-radius r(10)
+    overflow hidden
+    .progress-line
+      width 20%
+      height 100%
+      background-color: #fc2e4d
+      position: absolute
+      top 0
+      right 0
+  .loading-text
+    box-background-img-center('../images/loading/loading-txt.png', 200, 28)
+    top r(400)
+  .logo
+    box-background-img-center('../images/loading/waimai-logo.png', 162, 39)
+    bottom r(120)
+  .copyright
+    font-size r(26)
+    color #e48892
+    position-absolute-center()
+    bottom r(76)
+    width 100%
+    text-align center
+
+.page1
+  full-screen()
+  position-absolute-tl(0, 0)
+  z-index 10
+  background-color deepskyblue
+  .theme-title
+    box-background-img-center('../images/page1/theme-title.png', 397, 224)
+    top r(42)
+    .hello
+      box-background-img('../images/page1/hello.png', 75, 70)
+      position-absolute-tr(20, 8)
+  .clouds
+    box-background-img-center('../images/page1/clouds.png', 640, 673)
+    bottom 0
+  .grass1
+    box-background-img-center('../images/page1/grass1.png', 640, 396)
+    bottom 0
+  .tree
+    box-background-img-center('../images/page1/trees.png', 559, 71)
+    bottom r(352)
+  .grass2
+    box-background-img-center('../images/page1/grass2.png', 640, 228)
+    bottom 0
+  .circle1
+    box-background-img-center('../images/page1/circle1.png', 208, 208)
+    bottom r(86)
+    .circle2
+      box-background-img-center('../images/page1/circle2.png', 208, 208)
+    .btn
+      box-background-img('../images/page1/bear-btn-aft.png', 124, 113)
+      position-absolute-vertical-center()
+  .rider2
+    box-background-img-center('../images/page1/rider2.png', 167, 279)
+    bottom r(346)
+  .dust
+    box-background-img-center('../images/page1/jet1.png', 114, 26)
+    bottom r(346)
+  .start
+    font-size r(26)
+    color #666
+    position-absolute-center()
+    text-align center
+    width 100%
+    bottom r(34)
+
+.page2,
+.page3,
+.page4,
+.page5,
+.page6,
+.page7,
+.page8
+  .text
+    display flex
+    z-index 10
+    position-absolute-tl(32, 32)
+    .line
+      position-absolute-tl(0, 0)
+      width r(5)
+      height 100%
+      background-color white
+    .title
+      margin-left r(15)
+      color white
+      .title1
+        font-size r(64)
+        margin-bottom r(12)
+      .title2
+        line-height: 1.4
+        font-size r(28)
+
+.page2
+  background-color: #be8651
+  .bg1
+    box-background-img-center('../images/page2/bg1.png', 576, 573)
+    bottom r(252)
+  .bg2
+    box-background-img-center('../images/page2/bg2.png', 582, 520)
+    bottom r(252)
+  .bg3
+    box-background-img-center('../images/page2/bg3.png', 561, 516)
+    bottom r(252)
+
+  .sphere
+    box-background-img-center('../images/page2/sphere1.png', 640, 356)
+    bottom 0
+  .bear
+    box-background-img('../images/page2/bear1.png', 178, 134)
+    position-absolute-br(0, 38)
+
+  .text-wrap
+    box-background-img('../images/page2/txt-bubbl.png', 363, 119)
+    position-absolute-br(140, 140)
+  .text-wrap .text1
+    box-background-img-center('../images/page2/txt-work.png', 220, 30)
+    bottom r(45)
+  .text-wrap .text2
+    box-background-img-center('../images/page2/txt-life.png', 220, 30)
+    bottom r(45)
+  .text-wrap .text3
+    box-background-img-center('../images/page2/txt-res.png', 220, 30)
+    bottom r(45)
+
+  .person1
+    box-background-img-center('../images/page2/front1.png', 439, 349)
+    bottom r(290)
+    .paper1
+      background url('../images/page2/papers.png') bottom right no-repeat;
+      background-size r(115) r(114)
+      size(85, 50)
+      position-absolute-bl(104, 27)
+      .paper2
+        background url('../images/page2/papers.png') 0 r(-32) no-repeat;
+        background-size r(115) r(114)
+        size(86, 26)
+        position-absolute-bl(45, -70)
+      .paper3
+        background url('../images/page2/papers.png') r(-45) 0 no-repeat;
+        background-size r(115) r(114)
+        size(64, 20)
+        position-absolute-br(80, 0)
+  .person2
+    box-background-img-center('../images/page2/relax.png', 436, 332)
+    bottom r(290)
+    .leg1
+      box-background-img('../images/page2/leg1.png', 113, 24)
+      position-absolute-bl(110, 195)
+    .leg2
+      box-background-img('../images/page2/leg2.png', 85, 71)
+      position-absolute-bl(120, 193)
+  .person3
+    box-background-img-center('../images/page2/person.png', 503, 229)
+    bottom r(300)
+    .word1
+      box-background-img('../images/page2/word1.png', 92, 83)
+      position-absolute-bl(194, 7)
+    .word2
+      box-background-img('../images/page2/word2.png', 77, 70)
+      position-absolute-bl(245, 115)
+    .word3
+      box-background-img('../images/page2/word3.png', 115, 104)
+      position-absolute-br(220, 130)
+    .word4
+      box-background-img('../images/page2/word4.png', 79, 73)
+      position-absolute-br(230, 12)
+
+.page3
+  background-color #ee4143
+  .bg
+    box-background-img-center('../images/page3/bg4_.png', 592, 490)
+    bottom r(314)
+  .sphere
+    box-background-img-center('../images/page3/sphere2.png', 640, 356)
+    bottom 0
+  .bear
+    background url('../images/page3/bear2.png') r(-103) r(-96) no-repeat;
+    background-size r(368) r(427)
+    size(227, 336)
+    position-absolute-center()
+    bottom r(310)
+    .face1
+      background url('../images/page3/bear2.png') 0 r(-118) no-repeat;
+      background-size r(368) r(427)
+      size(102, 102)
+      position-absolute-tl(0, -102)
+    .face2
+      background url('../images/page3/bear2.png') r(-266) 0 no-repeat;
+      background-size r(368) r(427)
+      size(101, 102)
+      position-absolute-br(320, -51)
+    .hand-left
+      box-background-img('../images/page3/hand-left_.png', 74, 77)
+      position-absolute-bl(80, 38)
+    .hand-right
+      box-background-img('../images/page3/hand-right.png', 74, 77)
+      position-absolute-br(80, 38)
+  .table
+    box-background-img-center('../images/page3/table.png', 514, 258)
+    bottom r(140)
+  .food
+    box-background-img-center('../images/page3/foods.png', 354, 152)
+    bottom r(330)
+
+.page4
+  background-color #dd8a03
+  .bg
+    box-background-img-center('../images/page4/bg5.png', 592, 580)
+    bottom r(300)
+  .sphere
+    box-background-img-center('../images/page4/sphere3.png', 640, 356)
+    bottom 0
+  .bear1
+    box-background-img-center('../images/page4/bear3.png', 206, 321)
+    bottom r(195)
+  .bear2
+    box-background-img-center('../images/page4/bear3-1-1.png', 251, 335)
+    bottom r(195)
+  .bear3
+    box-background-img-center('../images/page4/bear3-2-1.png', 215, 313)
+    bottom r(195)
+  .bear4
+    box-background-img-center('../images/page4/bear3-3-1.png', 290, 321)
+    bottom r(195)
+  .card1
+    box-background-img('../images/page4/license.png', 197, 140)
+    position-absolute-bl(500, 40)
+  .card2
+    box-background-img('../images/page4/license1.png', 228, 151)
+    position-absolute-bl(500, 40)
+  .oil1
+    box-background-img('../images/page4/oil.png', 205, 107)
+    position-absolute-bl(660, 225)
+  .oil2
+    box-background-img('../images/page4/oil1.png', 231, 156)
+    position-absolute-bl(660, 225)
+  .evil1
+    box-background-img('../images/page4/evil2.png', 198, 163)
+    position-absolute-br(480, 30)
+  .evil2
+    box-background-img('../images/page4/evil21.png', 211, 173)
+    position-absolute-br(480, 30)
+
+.page5
+  background-color #3fa100
+  .bg
+    box-background-img-center('../images/page5/bg6.png', 588, 333)
+    bottom r(300)
+  .sphere
+    box-background-img-center('../images/page5/sphere4.png', 640, 356)
+    bottom 0
+  .bear
+    box-background-img-center('../images/page5/bear4.png', 309, 325)
+    bottom r(170)
+  .card1
+    box-background-img('../images/page5/card1.png', 160, 175)
+    position-absolute-bl(435, 32)
+  .card2
+    box-background-img('../images/page5/card2.png', 209, 240)
+    position-absolute-bl(530, 240)
+  .card3
+    box-background-img('../images/page5/card3.png', 167, 184)
+    position-absolute-br(420, 45)
+
+.page6
+  background-color #0098cf
+  .bg
+    box-background-img-center('../images/page6/bg7.png', 594, 493)
+    bottom r(300)
+  .sphere
+    box-background-img-center('../images/page6/sphere5.png', 640, 356)
+    bottom 0
+  .bear
+    box-background-img-center('../images/page6/rider2.png', 230, 390)
+    bottom r(175)
+  .cloud
+    box-background-img-center('../images/page6/weather-cloud.png', 432, 160)
+    top r(240)
+  .dust
+    box-background-img-center('../images/page6/shadow.png', 114, 26)
+    bottom r(175)
+  .snow-piece
+    box-background-img('../images/page6/snow-piece.png', 32, 32)
+    position-absolute-tl(370, 160)
+
+
+
+.page7
+  background-color #b527a0
+  .bg
+    box-background-img-center('../images/page7/bg8.png', 588, 333)
+    bottom r(300)
+  .sphere
+    box-background-img-center('../images/page7/sphere6.png', 640, 356)
+    bottom 0
+  .bear
+    box-background-img-center('../images/page7/bear5.png', 285, 328)
+    bottom r(200)
+  .gift
+    position-absolute-center()
+    size(120, 120)
+    bottom r(410)
+    arr = (35 29) (93 79) (72 64) (91 73) (99 65) (107 80) (107 80) (88 64) (78 50) (49 37) (51 31) (37 23)
+    for v, i in arr
+      i = i + 1
+      url = '../images/page7/gift' + i + '.png'
+      .box{i}
+        transform rotateZ((28 *i) deg) translateY(r(220))
+        size(v[0], v[1])
+        position-absolute-vertical-center()
+        .gift{i}
+          box-background-img(url, v[0], v[1])
+
+
+
+
+
+.page8
+  background-color #19072a
+  .light
+    box-background-img('../images/page8/streetlight.png', 80, 443)
+    position-absolute-bl(300, 240)
+    .light2
+      box-background-img('../images/page8/lamplight.png', 437, 423)
+      position-absolute-tl(10, -140)
+  .sphere
+    box-background-img-center('../images/page8/sphere7.png',640, 384)
+    bottom 0
+  .moto
+    box-background-img('../images/page8/moto.png', 200, 137)
+    position-absolute-bl(335, 125)
+  .bear
+    box-background-img('../images/page8/bear6.png', 276, 271)
+    position-absolute-br(280, 140)
+  .share
+    box-background-img-center('../images/page8/share.png', 379, 113)
+    bottom r(140)
+  .bd-url
+    text-align center
+    color #b579d6
+    font-size r(28)
+    position-absolute-bl(70,0)
+    width 100%
+
+
+
+
+//动画初始
+
+.page1
+  .grass2,
+  .tree,
+  .dust
+  .rider2
+    opacity 0
+  .theme-title
+    opacity 0
+    .hello
+      opacity 0
+  .circle1
+    opacity 0
+  .grass1
+    height r(100)
+
+
+.swiper-slide
+  .text
+    .line
+      opacity 0
+    .title
+      .title1,
+      .title2
+        opacity 0
+
+.page2
+  .bg1,
+  .bg2,
+  .bg3,
+  .person1,
+  .person2,
+  .person3
+    opacity 0
+  .text-wrap
+    opacity 0
+
+.page3
+  .bg,
+  .bear,
+  .table,
+  .food
+    opacity 0
+  .bear
+    .face1,
+    .face2
+      opacity 0
+
+.page4
+  .bg,
+  .bear1,
+  .bear2,
+  .bear3,
+  .bear4,
+  .card1,
+  .card2,
+  .oil1
+  .oil2,
+  .evil1,
+  .evil2
+    opacity 0
+
+.page5
+  .bg,
+  .bear,
+  .card1,
+  .card2,
+  .card3
+    opacity 0
+
+.page6
+  .bg,
+  .bear,
+  .cloud,
+  .snow-piece,
+  .dust
+    opacity 0
+
+.page7
+  .bg,
+  .bear
+    opacity 0
+  for i in 1..12
+    .gift{i}
+      opacity 0
+
+
+
+
+
+
+
+
